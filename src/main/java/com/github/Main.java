@@ -27,5 +27,13 @@ public class Main {
         var earlyPowerProfiles = completeProfile.decompose();
         System.out.println(result);
         System.out.println(earlyPowerProfiles);
+
+        // Output 1:
+        // OffsetPowerPerPtu[id=CongestionProfileData-DesiredControlProfileData-AppliedControlProfileData]
+        //
+        // Output 2:
+        // [CongestionProfile[profile=OffsetPowerPerPtu[id=CongestionProfileData]],
+        // DesiredControlProfile[profile=OffsetPowerPerPtu[id=DesiredControlProfileData]],
+        // AppliedProfile[profile=OffsetPowerPerPtu[id=AppliedControlProfileData]]]
     }
 }
