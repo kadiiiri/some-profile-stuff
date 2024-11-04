@@ -1,5 +1,6 @@
 package com.github;
 
+import com.github.powerprofile.EarlyPowerProfile;
 import com.github.powerprofile.EarlyPowerProfile.AppliedProfile;
 import com.github.powerprofile.EarlyPowerProfile.DesiredControlProfile;
 import com.github.powerprofile.LatePowerProfile.CompleteProfile;
@@ -25,9 +26,9 @@ public class Main {
         var result = completeProfile.compose();
 
         var earlyPowerProfiles = completeProfile.decompose();
+
         System.out.println(result);
         System.out.println(earlyPowerProfiles);
-
         // Output 1:
         // OffsetPowerPerPtu[id=CongestionProfileData-DesiredControlProfileData-AppliedControlProfileData]
         //
@@ -35,5 +36,15 @@ public class Main {
         // [CongestionProfile[profile=OffsetPowerPerPtu[id=CongestionProfileData]],
         // DesiredControlProfile[profile=OffsetPowerPerPtu[id=DesiredControlProfileData]],
         // AppliedProfile[profile=OffsetPowerPerPtu[id=AppliedControlProfileData]]]
+
+        switch (earlyPowerProfiles.getFirst()) {
+            case AppliedProfile appliedProfile -> System.out.println(appliedProfile);
+            case CongestionProfile profile -> System.out.println(profile);
+            case DesiredControlProfile controlProfile -> System.out.println(controlProfile);
+        }
+
+        // Output 3:
+        // CongestionProfile[profile=OffsetPowerPerPtu[id=CongestionProfileData]
+
     }
 }

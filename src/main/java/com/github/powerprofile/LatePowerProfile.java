@@ -6,6 +6,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
+import static java.util.Arrays.asList;
 import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.*;
 import static java.util.stream.Collectors.collectingAndThen;
@@ -31,7 +32,7 @@ public interface LatePowerProfile extends PowerProfile {
         }
 
         public List<EarlyPowerProfile> decompose() {
-            return Arrays.asList(earlyPowerProfiles);
+            return asList(earlyPowerProfiles);
         }
     }
 
