@@ -46,5 +46,17 @@ public class Main {
         // Output 3:
         // CongestionProfile[profile=OffsetPowerPerPtu[id=CongestionProfileData]
 
+
+        // Get only the congestionProfiles
+        var congestionProfiles = earlyPowerProfiles.stream()
+                .filter(CongestionProfile.class::isInstance)
+                .toList();
+
+        // Get only the DesiredControlProfiles
+        var desiredControlProfiles = earlyPowerProfiles.stream()
+                .filter(DesiredControlProfile.class::isInstance)
+                .toList();
+
+        // We can now make a new profile with these or use them for other unique operations
     }
 }
