@@ -26,8 +26,9 @@ public class Main {
 
         var earlyPowerProfiles = completeProfile.decompose();
 
-        System.out.println(result);
-        System.out.println(earlyPowerProfiles);
+        System.out.println("Decomposed early profiles: " + earlyPowerProfiles);
+        System.out.println("Composed profile: " + result);
+
         // Output 1:
         // OffsetPowerPerPtu[id=CongestionProfileData-DesiredControlProfileData-AppliedControlProfileData]
         //
@@ -37,9 +38,9 @@ public class Main {
         // AppliedProfile[profile=OffsetPowerPerPtu[id=AppliedControlProfileData]]]
 
         switch (earlyPowerProfiles.getFirst()) {
-            case AppliedProfile appliedProfile -> System.out.println(appliedProfile);
-            case CongestionProfile profile -> System.out.println(profile);
-            case DesiredControlProfile controlProfile -> System.out.println(controlProfile);
+            case AppliedProfile appliedProfile -> System.out.println("First profile: " + appliedProfile);
+            case CongestionProfile profile -> System.out.println("First profile: " + profile);
+            case DesiredControlProfile controlProfile -> System.out.println("First profile: " + controlProfile);
         }
 
         // Output 3:
@@ -57,5 +58,8 @@ public class Main {
                 .toList();
 
         // We can now make a new profile with these or use them for other unique operations
+
+        System.out.println("Congestion Profiles: " + congestionProfiles);
+        System.out.println("Desired Control Profiles: " + desiredControlProfiles);
     }
 }
