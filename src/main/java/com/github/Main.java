@@ -1,10 +1,10 @@
 package com.github;
 
 import com.github.dto.OffsetPowerPerPtu;
-import com.github.powerprofile.EarlyPowerProfile.AppliedProfile;
-import com.github.powerprofile.EarlyPowerProfile.CongestionProfile;
-import com.github.powerprofile.EarlyPowerProfile.DesiredControlProfile;
-import com.github.powerprofile.LatePowerProfile.CompleteProfile;
+import com.github.powerprofile.AppliedProfile;
+import com.github.powerprofile.CompleteProfile;
+import com.github.powerprofile.CongestionProfile;
+import com.github.powerprofile.DesiredControlProfile;
 
 public class Main {
     public static void main(String[] args) {
